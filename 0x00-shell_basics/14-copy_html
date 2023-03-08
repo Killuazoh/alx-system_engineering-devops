@@ -1,0 +1,4 @@
+#!/bin/bash
+source_dir=$(pwd)
+target_dir=$(dirname "${source_dir}")
+find "${source_dir}" -maxdepth 1 -name "*.html" -type f -newer "${target_dir}" | xargs -I {} cp -u {} "${target_dir}"
